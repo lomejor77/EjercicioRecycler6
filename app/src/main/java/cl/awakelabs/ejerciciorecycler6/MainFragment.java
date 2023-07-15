@@ -25,6 +25,7 @@ public class MainFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     FragmentMainBinding binding;
+    List<ImageListModel> dataList = getData();
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -72,6 +73,8 @@ public class MainFragment extends Fragment {
 
     private void initRecycler() {
         MyAdapter adapter = new MyAdapter();
+        adapter.setListado(dataList);
+        binding.rView.setAdapter(adapter);
 
     }
     private List<ImageListModel>getData() {
